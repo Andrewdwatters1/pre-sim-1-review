@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+//Link is what we bring in to let us click a button and link another route on the frontend that will load another component. The to must match a defined route in index.js
+import {Link} from 'react-router-dom'
+
+//components
+import Nav from './Components/Nav'
+
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Nav>
+          List and Recipe App
+        </Nav>
+        <Link to="/list"><button>Go to list</button></Link>
+        <Link to="/recipes"><button>Go to recipes landing page!</button></Link>
       </div>
     );
   }

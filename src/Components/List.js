@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 
 import axios from 'axios'
 
+//components
 import ListItem from './ListItem'
+import Nav from './Nav'
 
 export default class List extends Component {
     constructor() {
@@ -63,6 +65,9 @@ export default class List extends Component {
     render() {
         return (
             <div>
+                <Nav>
+                    List
+                </Nav>
                 {
                     this.state.list.map( (element, index) => {
                         return (

@@ -17,9 +17,10 @@ ReactDOM.render(
     <Switch>
         <Route exact path="/" component={App} />
         <Route path="/list" component={List} />
-        <Route path="/recipes" render={() => {
+        {/* If you need to access props in RecipeLanding, make sure to pass props through the callback function of render to recipeLanding via {...props}. then in RecipeLanding take props in through the constructor and pass it through to super. Component handles setting the correct values for this.props when we do this. */}
+        <Route path="/recipes" render={(props) => {
             return ( 
-            <RecipeLanding>
+            <RecipeLanding {...props}>
                 <Switch>
                     <Route path="/recipes/:id" component={SpecificRecipe} />
                     <Route component={RecipeDashboard} />
